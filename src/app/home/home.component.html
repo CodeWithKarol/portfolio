@@ -1,0 +1,62 @@
+<div
+  class="flex flex-col h-screen bg-cover bg-[url(https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]"
+>
+  <header>
+    <div class="flex justify-between items-center p-6">
+      <h1>Karol Modelski</h1>
+
+      @if (!isMobile()) {
+        <nav class="flex gap-8">
+          <a class="text-sm/6 font-semibold text-gray-900 cursor-pointer"
+            >Skills</a
+          >
+          <a class="text-sm/6 font-semibold text-gray-900 cursor-pointer"
+            >Projects</a
+          >
+          <a class="text-sm/6 font-semibold text-gray-900 cursor-pointer"
+            >Blog</a
+          >
+          <a class="text-sm/6 font-semibold text-gray-900 cursor-pointer"
+            >Contact</a
+          >
+        </nav>
+      }
+
+      @if (isMobile()) {
+        <fa-icon [icon]="faCoffee" (click)="toggleMenu()" />
+      }
+    </div>
+
+    @if (isMenuOpened()) {
+      <div class="absolute top-0 right-0 h-screen w-screen bg-white">
+        <div class="flex flex-col gap-8">
+          <div class="flex justify-between items-center p-6">
+            <h1>Logo</h1>
+            <fa-icon [icon]="faTimes" (click)="toggleMenu()" />
+          </div>
+          <div class="flex flex-col gap-4 p-4">
+            <a
+              class="rounded-md px-3 py-2 hover:bg-gray-50 text-base/7 font-semibold text-gray-900 cursor-pointer"
+              >Skills</a
+            >
+            <a
+              class="rounded-md px-3 py-2 hover:bg-gray-50 text-base/7 font-semibold text-gray-900 cursor-pointer"
+              >Projects</a
+            >
+            <a
+              class="rounded-md px-3 py-2 hover:bg-gray-50 text-base/7 font-semibold text-gray-900 cursor-pointer"
+              >Blog</a
+            >
+            <a
+              class="rounded-md px-3 py-2 hover:bg-gray-50 text-base/7 font-semibold text-gray-900 cursor-pointer"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    }
+  </header>
+  <div class="flex-1 flex justify-center items-center">
+    <h1>HERO</h1>
+  </div>
+</div>
